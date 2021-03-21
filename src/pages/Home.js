@@ -11,7 +11,6 @@ const  Home = () => {
             try {
               const resultData = await fetchProducts();
               setProducts(resultData);
-              console.log("result", resultData);
             }catch(e){
                 console.log("Error", e)
             }
@@ -31,5 +30,5 @@ const  Home = () => {
 };
 
 
-export default Home
+export default Home;
 

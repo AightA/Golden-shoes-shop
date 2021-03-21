@@ -12,7 +12,7 @@ export const fetchProducts = async () => {
     return data;
 };
 
-export const fetchPurchased = async () => {
+export const fetchOrders = async () => {
     const {data} = await axiosLinkDefault().get('/purchases');
     return data;
 };
