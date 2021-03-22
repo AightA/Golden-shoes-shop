@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {appConfig} from '../services/config';
+import { appConfig } from '../services/config';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,39 +22,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProductCard = ({product}) =>  {
+const ProductCard = ({ product }) => {
   const classes = useStyles();
-  const {image} = product;
+  const { image } = product;
 
   return (
     <Card className={classes.root}>
-      <CardHeader
-        title={product.name}
-        subheader={`£${product.price}`}
-      />
+      <CardHeader title={product.name} subheader={`£${product.price}`} />
       <CardMedia
         className={classes.media}
         image={`${appConfig.apiURL}${image.url}`}
         title={product.name}
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-        {product.description}
+        <Typography variant='body2' color='textSecondary' component='p'>
+          {product.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label='add to favorites'>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton aria-label='share'>
           <ShareIcon />
         </IconButton>
-        <IconButton  aria-label="show more" > 
+        <IconButton aria-label='show more'>
           <ExpandMoreIcon />
         </IconButton>
       </CardActions>
     </Card>
   );
-}
+};
 
 export default ProductCard;
